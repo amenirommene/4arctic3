@@ -1,0 +1,16 @@
+<form [formGroup]="myForm">
+Apartment Number : <input formControlName="ApartmentNb">
+<div *ngIf="ApartmentNb?.invalid && ApartmentNb?.touched ">
+  Numéro apartment obligatoire</div>
+valid:{{ApartmentNb?.valid}} - invalid:{{ApartmentNb?.invalid}} <br>
+touched:{{ApartmentNb?.touched}} - untouched:{{ApartmentNb?.untouched}} <br>
+dirty:{{myForm.get('ApartmentNb')?.dirty}} -
+pristine:{{myForm.get('ApartmentNb')?.pristine}} <br>
+<br>
+Floor Number : <input formControlName="FloorNb">
+<div *ngIf="FloorNb?.invalid && FloorNb?.touched ">
+ <div *ngIf="FloorNb?.errors?.['required']">  Numéro floor obligatoire</div>
+ <div *ngIf="FloorNb?.errors?.['pattern']"> Uniquement des chiffres</div>
+</div>
+<input type="submit" value="add">
+</form>

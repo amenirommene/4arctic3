@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { HeaderComponent } from './header/header.component';
 import { ResidencesComponent } from './residences/residences.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ResidenceDetailsComponent } from './residence-details/residence-details.component';
+import { AddApartmentComponent } from './add-apartment/add-apartment.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { ResidenceDetailsComponent } from './residence-details/residence-details
     FooterComponent,
     HomeComponent,
     NotFoundComponent,
-    ResidenceDetailsComponent
+    ResidenceDetailsComponent,
+    AddApartmentComponent
   ],
   imports: [ //la liste des modules utilisés par les composants de ce module
     BrowserModule, //obligatoire
     AppRoutingModule, //Routage
-    FormsModule  //pour pouvoir utiliser la directive NgModel
+    FormsModule,  //pour pouvoir utiliser la directive NgModel
+    ReactiveFormsModule //pour pouvoir utiliser formGroup, .....
   ],
   providers: [],
   bootstrap: [AppComponent]

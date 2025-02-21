@@ -1,3 +1,4 @@
+import { AddApartmentComponent } from './add-apartment/add-apartment.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TestComponent } from './test/test.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path:"details/:id", component:ResidenceDetailsComponent},
   ]},
   {path:"test", component:TestComponent},
+  {path:"addApartment", component:AddApartmentComponent},
   {path:"details/:id", component:ResidenceDetailsComponent},
 
   {path:"**", component:NotFoundComponent}, // toujours à la fin
