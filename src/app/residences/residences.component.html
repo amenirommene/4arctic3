@@ -1,0 +1,58 @@
+<div>
+<p>residences works!</p>
+{{ name }} <!-- interpolation -->
+<button (click)="f(5)">Click Me!</button> <!--event-binding-->
+{{message}}
+<input [type]="text" [value]="prop"> <!--property binding-->
+{{prop}}
+<input [type]="text" [(ngModel)]="prop">
+</div>
+*********************************************
+<!----
+<ul>
+  <li *ngFor="let r of listResidences;let e= even; let o=odd; let i = index; let f=first; let l=last">
+  {{e}} ** {{o}}**{{l}}**{{f}} ** {{i}} ** {{r.id }}
+  <p *ngIf="show && i==position"> {{r.address}} </p>
+  <button (click)="showLocation(i)">Show location</button>
+ <button [disabled]="f">etat</button>
+</li>
+</ul>  ---->
+<div>
+rechercher par adresse : <input [(ngModel)]="address">
+</div>
+<div *ngFor="let r of listResidences">
+
+  <!--- reponse à la question e avec le ngModel en haut -->
+ <div *ngIf="r.address.toLowerCase().includes(address.toLowerCase())">
+
+  {{r.id }} - {{ r.name }}
+
+
+
+  <span *ngIf="r.status == 'Disponible'" [style.color]="getColor(r.status)">Disponible ✅</span>
+
+  <span *ngIf="r.status == 'En Construction' " [style.color]="getColor(r.status)">En Construction 🚧</span>
+
+  <span *ngIf="r.status == 'Vendu' " [style.color]="getColor(r.status)">Vendu ❌</span>
+
+<button [routerLink]="['details',r.id]">Details</button>
+
+  <button (click)="getLocation(r)">Show location</button>
+
+  <button (click)="addFavoris(r)">Add To Favoris</button>
+
+  <div *ngIf="showAdress && id==r.id"> {{r.address}} </div>
+
+ </div>
+
+</div>
+
+
+
+<h1>Mes favoris</h1>
+
+<div *ngFor="let r of favoris">
+
+{{r.id }} - {{ r.name }}
+
+</div>
