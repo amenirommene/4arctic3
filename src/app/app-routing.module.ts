@@ -8,11 +8,16 @@ import { ResidenceDetailsComponent } from './residence-details/residence-details
 
 const routes: Routes = [
 
-  {path:"residences", component:ResidencesComponent},
+  {path:"residences", component:ResidencesComponent,children:[
+    {path:"details/:id", component:ResidenceDetailsComponent},
+  ] },
   {path:"", redirectTo:"home", pathMatch:"full"}, //au chargement de l'application
-  {path:"home", component:HomeComponent},
+  {path:"home", component:HomeComponent, children:[
+    {path:"details/:id", component:ResidenceDetailsComponent},
+  ]},
   {path:"test", component:TestComponent},
   {path:"details/:id", component:ResidenceDetailsComponent},
+
   {path:"**", component:NotFoundComponent}, // toujours à la fin
 
 ];
