@@ -1,13 +1,24 @@
+import { ResidenceService } from './../services/residence.service';
 import { Residence } from './../core/models/residence';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 //@Component : décorateur de classe : déclarer que la classe actuelle
 //est la classe d'un composant
 @Component({
   selector: 'app-residences',
   templateUrl: './residences.component.html',
-  styleUrls: ['./residences.component.css']
+  styleUrls: ['./residences.component.css'],
+  //providers:[ResidenceService]
 })
-export class ResidencesComponent {
+export class ResidencesComponent implements OnInit {
+
+constructor(private rs:ResidenceService){
+  console.log("je suis le constructor");
+}
+ngOnInit(){
+  console.log("je suis ngOnInit");
+  this.rs.getAll().subscribe(res=>this.listResidences=res);
+
+}
 name : string = "arctic3";
 message : string = "";
 prop : string = "test";

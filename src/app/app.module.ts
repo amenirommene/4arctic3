@@ -12,7 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ResidenceDetailsComponent } from './residence-details/residence-details.component';
 import { AddApartmentComponent } from './add-apartment/add-apartment.component';
-
+import { HttpClientModule} from '@angular/common/http';
+import { AddResidenceComponent } from './add-residence/add-residence.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,13 +24,15 @@ import { AddApartmentComponent } from './add-apartment/add-apartment.component';
     HomeComponent,
     NotFoundComponent,
     ResidenceDetailsComponent,
-    AddApartmentComponent
+    AddApartmentComponent,
+    AddResidenceComponent
   ],
   imports: [ //la liste des modules utilisés par les composants de ce module
     BrowserModule, //obligatoire
     AppRoutingModule, //Routage
     FormsModule,  //pour pouvoir utiliser la directive NgModel
-    ReactiveFormsModule //pour pouvoir utiliser formGroup, .....
+    ReactiveFormsModule ,//pour pouvoir utiliser formGroup, .....
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

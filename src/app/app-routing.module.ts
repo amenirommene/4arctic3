@@ -1,3 +1,4 @@
+import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { AddApartmentComponent } from './add-apartment/add-apartment.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TestComponent } from './test/test.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
     {path:"details/:id", component:ResidenceDetailsComponent},
   ]},
   {path:"test", component:TestComponent},
+  {path:"addResidence", component:AddResidenceComponent},
   {path:"addApartment", component:AddApartmentComponent},
   {path:"details/:id", component:ResidenceDetailsComponent},
 
