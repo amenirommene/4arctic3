@@ -14,6 +14,7 @@ export class AddApartmentComponent implements OnInit {
     FloorNb : new FormControl("",[Validators.required, Validators.pattern("[1-9]*")]),
     ApartmentNb : new FormControl("",[Validators.required, Validators.pattern("[1-9]*")]),
     surface : new FormControl("",Validators.required),
+    terrace : new FormControl(""),
     category : new FormControl("",Validators.required),
     surfaceTerrace : new FormControl("",Validators.required),
     description : new FormControl("",Validators.required),
