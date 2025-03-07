@@ -1,12 +1,25 @@
-<p>add-residence works!</p>
-<form [formGroup]="myForm" (submit)="add()">
-  name <input formControlName="name">
-  <br>
-  adress <input formControlName="adress">
-  <br>
-  location <input formControlName="location">
-  <br>
-  status <input formControlName="status">
-  <br>
-  <input type="submit">
+<p class="alert alert-success">add-residence works!</p>
+
+<form [formGroup]="myForm" (submit)="add()" class="container mt-4">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input id="name" formControlName="name" class="form-control" type="text">
+  </div>
+
+  <div class="mb-3">
+    <label for="adress" class="form-label">Address</label>
+    <input id="adress" formControlName="adress" class="form-control" type="text">
+  </div>
+
+  <div class="mb-3">
+    <label for="location" class="form-label">Image</label>
+    <input id="image" formControlName="image" class="form-control" type="text">
+  </div>
+
+  <div class="mb-3">
+    <label for="status" class="form-label">Status</label>
+    <input id="status" formControlName="status" class="form-control" type="text">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>

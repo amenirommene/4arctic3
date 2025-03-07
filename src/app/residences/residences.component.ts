@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ResidenceService } from './../services/residence.service';
 import { Residence } from './../core/models/residence';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResidencesComponent implements OnInit {
 
-constructor(private rs:ResidenceService){
+constructor(private rs:ResidenceService, private router:Router){
   console.log("je suis le constructor");
 }
 ngOnInit(){
@@ -32,7 +33,11 @@ showLocation(pos:number){
   this.show=true;
   this.position=pos;
 }
-
+delete(id:number){
+  this.rs.deleteResidence(id).subscribe(
+    ()=>
+      this.rs.getAll().subscribe(res=>this.listResidences=res));
+}
 getColor(s : string){
   if (s == "Disponible") {
     return "green";

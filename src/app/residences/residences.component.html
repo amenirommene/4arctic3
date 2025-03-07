@@ -17,36 +17,29 @@
  <button [disabled]="f">etat</button>
 </li>
 </ul>  ---->
-<div>
-rechercher par adresse : <input [(ngModel)]="address">
-</div>
-<div *ngFor="let r of listResidences">
+rechercher par adresse : <input class="input-text" [(ngModel)]="address">
+  <div class="card-group">
+  <ng-container *ngFor="let r of listResidences">
+  <div class="card"  *ngIf="r.address.toLowerCase().includes(address.toLowerCase())">
+    <img class="card-img-top"  [src]="r.image" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{r.name}}</h5>
+      <p class="card-text" *ngIf="r.status == 'Disponible'"  [style.color]="getColor(r.status)">Disponible ✅</p>
+        <p class="card-text" *ngIf="r.status == 'En Construction' " [style.color]="getColor(r.status)">En Construction 🚧</p>
+        <p class="card-text" *ngIf="r.status == 'Vendu' " [style.color]="getColor(r.status)">Vendu ❌</p>
+      <p class="card-text">
+        <button class="btn btn-primary" [routerLink]="['/details',r.id]">details</button>
+        <button class="btn btn-secondary" [routerLink]="['details',r.id]">details-children</button>
+        <button class="btn btn-light" (click)="getLocation(r)">Show location</button>
+        <button class="btn btn-dark" (click)="addFavoris(r)">Add To Favoris</button>
+        <button class="btn btn-danger" (click)="delete(r.id)">delete</button>
+      </p>
+    </div>
+    <div *ngIf="showAdress && id==r.id"> {{r.address}} </div>
 
-  <!--- reponse à la question e avec le ngModel en haut -->
- <div *ngIf="r.address.toLowerCase().includes(address.toLowerCase())">
-
-  {{r.id }} - {{ r.name }}
-
-
-
-  <span *ngIf="r.status == 'Disponible'" [style.color]="getColor(r.status)">Disponible ✅</span>
-
-  <span *ngIf="r.status == 'En Construction' " [style.color]="getColor(r.status)">En Construction 🚧</span>
-
-  <span *ngIf="r.status == 'Vendu' " [style.color]="getColor(r.status)">Vendu ❌</span>
-
-<button [routerLink]="['/details',r.id]">Details</button>
-<button [routerLink]="['details',r.id]">Details-ChildRoute</button>
-  <button (click)="getLocation(r)">Show location</button>
-
-  <button (click)="addFavoris(r)">Add To Favoris</button>
-
-  <div *ngIf="showAdress && id==r.id"> {{r.address}} </div>
-
- </div>
-
-</div>
-
+  </div>
+</ng-container> 
+  </div>
 
 
 <h1>Mes favoris</h1>

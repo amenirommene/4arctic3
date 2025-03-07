@@ -17,7 +17,7 @@ export class AddResidenceComponent {
    this.myForm= new FormGroup({
     name : new FormControl(""),
     adress : new FormControl(""),
-    location : new FormControl(""),
+    image : new FormControl(""),
     status : new FormControl("")
    })
 }
