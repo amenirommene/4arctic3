@@ -23,6 +23,13 @@
       "address": "inconnu",
       "image": "../../assets/images/R4.jpg",
       "status": "En Construction"
+    },
+    {
+      "name": "test",
+      "adress": "test",
+      "image": "tttt",
+      "status": "valid",
+      "id": 5
     }
   ],
   "apartments": [

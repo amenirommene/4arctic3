@@ -19,7 +19,7 @@ Floor Number : <input formControlName="FloorNb">
   <div class="row mb-3">
       <label for="apartNum" class="col-sm-2 col-col-sm-2 col-form-label">Apartment Number: </label>
       <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="ApartmentNb" />
+      <input type="text" class="form-control" formControlName="appartNum" />
       <div *ngIf="apartNum?.invalid" class=" alert text-danger">
           <div *ngIf="apartNum?.errors?.['required']" >
               Required field
@@ -34,7 +34,7 @@ Floor Number : <input formControlName="FloorNb">
     <div class="row mb-3">
       <label for="floorNum" class="col-sm-2 col-form-label">Floor Number: </label>
       <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="FloorNb"  />
+      <input type="text" class="form-control" formControlName="floorNum"  />
       <div *ngIf="floorNum?.touched && floorNum?.errors?.['required']" class="alert text-danger">
           Required field
         </div>

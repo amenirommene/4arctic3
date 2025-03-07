@@ -19,7 +19,7 @@ const routes: Routes = [
   ]},
   {path:"test", component:TestComponent},
   {path:"addResidence", component:AddResidenceComponent},
-  {path:"addApartment", component:AddApartmentComponent},
+  {path:"updateApartment/:id", component:AddApartmentComponent},
   {path:"details/:id", component:ResidenceDetailsComponent},
 
   {path:"**", component:NotFoundComponent}, // toujours à la fin
